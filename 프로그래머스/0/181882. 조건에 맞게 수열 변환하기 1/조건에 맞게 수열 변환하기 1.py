@@ -1,10 +1,10 @@
 def solution(arr):
-    n = []
+    answer = []
     for i in arr:
-        if int(i) >= 50 and int(i) % 2 == 0:
-            n.append(i / 2)
-        elif int(i) < 50 and int(i) % 2 != 0:
-            n.append(i * 2)
+        if i>=50 and i%2==0:
+            answer.append(i//2)
+        elif i<50 and i%2==1:
+            answer.append(i*2)
         else:
-            n.append(i)
-    return n
+            answer.append(i)
+    return answer
