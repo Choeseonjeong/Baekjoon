@@ -1,8 +1,8 @@
 def solution(price, money, count):
-    num=0
+    num = 0
     for i in range(1,count+1):
-        num+=i*price
-    if money>num:
-        return 0
-    else:
+        num += price*i
+    if money < num:
         return num-money
+    else:
+        return 0
