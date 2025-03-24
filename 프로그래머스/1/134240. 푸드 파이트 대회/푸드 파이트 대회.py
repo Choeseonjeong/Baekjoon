@@ -1,10 +1,5 @@
 def solution(food):
-    arr=[]
-    answer=[]
-    for i in food:
-        a = i//2
-        arr.append(a)
-    for i in range(len(arr)):
-        for j in range(arr[i]):
-            answer.append(i)
-    return "".join(map(str,answer))+str(0)+"".join(map(str,answer[::-1])) 
+    temp =''
+    for i in range(1, len(food)):
+        temp += str(i) * (food[i]//2)
+    return temp + '0' + temp[::-1]
