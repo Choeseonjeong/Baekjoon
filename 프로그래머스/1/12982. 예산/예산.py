@@ -1,10 +1,12 @@
 def solution(d, budget):
-    num = sorted(d)  # 요청 금액을 오름차순으로 정렬
-    arr = 0  # 현재까지 사용된 예산
-    result = 0  # 지원 가능한 부서의 수
-    for i in num:
-        if i+arr>budget:
+    d.sort()  # 작은 금액부터 처리하기 위해 정렬
+    total = 0  # 사용한 예산 합
+    cnt = 0  # 지원 가능한 부서 수
+    
+    for cost in d:
+        if total + cost > budget:  # 예산 초과 시 중단
             break
-        arr+=i
-        result+=1
-    return result
+        total += cost
+        cnt += 1  # 부서 개수 증가
+
+    return cnt
