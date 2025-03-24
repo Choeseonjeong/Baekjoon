@@ -1,11 +1,12 @@
 def solution(name, yearning, photo):
-    result=[]
-    d = dict(zip(name,yearning))
-    for i in photo:
-        answer=0
-        for j in i:
-            if j in d:
-                answer+=d[j]
-        result.append(answer)
+    answer = {}
+    result = []
+    for i in range(len(name)):
+        answer[name[i]]=yearning[i]
         
+    for group in photo:
+        total = 0
+        for person in group:
+            total += answer.get(person,0)
+        result.append(total)
     return result
