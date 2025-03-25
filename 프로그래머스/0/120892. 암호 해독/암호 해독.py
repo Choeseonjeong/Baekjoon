@@ -1,4 +1,3 @@
 def solution(cipher, code):
     answer = ''
-    answer+=cipher[code-1::code]
-    return answer
+    return "".join(cipher[code-1::code])
