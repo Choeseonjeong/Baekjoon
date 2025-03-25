@@ -1,7 +1,7 @@
-def solution(arr, parts):
-    answer=''
+def solution(my_strings, parts):
+    answer = ''
+    result = ''
     for i in range(len(parts)):
-        s,e = parts[i]
-        num = arr[i]
-        answer+=num[s:e+1]
+        x,y = parts[i][0],parts[i][1]
+        answer+=my_strings[i][x:y+1]
     return answer
