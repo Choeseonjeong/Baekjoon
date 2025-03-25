@@ -1,9 +1,12 @@
-def solution(hp):
-    num=0
-    num += hp//5
+def solution(hp):  
+    cnt = 0
+    cnt+=int(hp//5)
     hp = hp%5
-    num += hp//3
+    cnt+=int(hp//3)
     hp = hp%3
-    num += hp//1
+    cnt+=int(hp//1)
     hp = hp%1
-    return num
+    return cnt
+# 5
+# 3
+# 1
