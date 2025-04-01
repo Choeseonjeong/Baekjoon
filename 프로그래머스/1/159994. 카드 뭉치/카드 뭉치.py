@@ -1,15 +1,14 @@
 def solution(cards1, cards2, goal):
-    result=[]
-    for i in goal:
-        if cards1 and i == cards1[0]:
-            result.append(i)
-            cards1.remove(cards1[0])
-        elif cards2 and i == cards2[0]:
-            result.append(i)
-            cards2.remove(cards2[0])
+    a, b, c = 0, 0, 0
+
+    while c < len(goal):
+        if a < len(cards1) and goal[c] == cards1[a]:
+            a += 1
+            c += 1
+        elif b < len(cards2) and goal[c] == cards2[b]:
+            b += 1
+            c += 1
         else:
             return "No"
-    if goal==result:
-        return "Yes"
-    else:
-        return "No"
+    
+    return "Yes"
