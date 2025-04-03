@@ -1,7 +1,10 @@
-
 def solution(rsp):
-    dic = {'2':'0','0':'5','5':'2'}
     answer = ''
-    for i in rsp:
-        answer = answer+(dic[i])
+    for word in rsp:
+        if word == "2":
+            answer+="0"
+        elif word == "0":
+            answer+="5"
+        else:
+            answer+="2"
     return answer
