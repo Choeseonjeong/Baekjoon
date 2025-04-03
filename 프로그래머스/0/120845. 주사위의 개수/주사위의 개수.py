@@ -1,2 +1,5 @@
 def solution(box, n):
-    return int(box[0]/n)*int(box[1]/n)*int(box[2]/n)
+    answer = 1
+    for i in box:
+        answer *= int(i//n)
+    return answer
