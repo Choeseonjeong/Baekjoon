@@ -1,7 +1,7 @@
 import sys
+input = sys.stdin.readline
 
-N,M = sys.stdin.readline().split()
-
-arr1 = set(list(sys.stdin.readline().split()))
-arr2 = set(list(sys.stdin.readline().split()))
-print(len(list(arr1-arr2))+len(list(arr2-arr1)))
+N,M = map(int,input().split())
+S_a = set(map(int, input().split()))
+S_b = set(map(int, input().split()))
+print(len(S_a - S_b) + len(S_b - S_a))
