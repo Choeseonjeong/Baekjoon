@@ -1,12 +1,11 @@
 def solution(n):
-    k = bin(n)
-    KC = k.count("1")
-    a = []
+    num = n # 79
+    ncnt = bin(n)[2:].count("1")
+    cnt = 0
+    
     while True:
-        n += 1
-        h = bin(n)
-        HC = h.count("1")
-        if KC == HC:
+        if ncnt == cnt:
             break
-
-    return int(h, 2)
+        num+=1
+        cnt = bin(num)[2:].count("1")
+    return num
