@@ -1,5 +1,3 @@
 def solution(s):
-    s = s.split(" ")
-    for i in range(len(s)):
-        s[i] = s[i].capitalize()
-    return " ".join(s)
+
+    return ' '.join(word.capitalize() for word in s.split(' '))
