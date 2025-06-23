@@ -1,11 +1,10 @@
 def solution(n):
-    num = n # 79
-    ncnt = bin(n)[2:].count("1")
-    cnt = 0
-    
+    nnum = bin(n)[2:].count("1")
+    exn = n+1
     while True:
-        if ncnt == cnt:
+        if bin(exn)[2:].count("1") == bin(n)[2:].count("1"):
             break
-        num+=1
-        cnt = bin(num)[2:].count("1")
-    return num
+        else:
+            exn+=1
+    return exn
+        
