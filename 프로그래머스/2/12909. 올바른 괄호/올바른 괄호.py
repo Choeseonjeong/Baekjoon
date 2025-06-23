@@ -1,13 +1,11 @@
 def solution(s):
     stack = []
-    for text in s:
-        if text == "(":
-            stack.append(text)
-        else: # ) 인 경우 
-            if not stack:
-                return False
-            stack.pop()
-    return len(stack) == 0
-                
-        
-            
+    for i in s:
+        if not stack:
+            stack.append(i)
+        else:
+            if i == "(":
+                stack.append(i)
+            else:
+                stack.pop()    
+    return True if not stack else False
