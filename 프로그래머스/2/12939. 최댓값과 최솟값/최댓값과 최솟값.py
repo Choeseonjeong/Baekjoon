@@ -1,6 +1,3 @@
 def solution(s):
-    s = s.split(" ")
-    answer = []
-    for i in s:
-        answer.append(int(i))
-    return str(min(answer))+" "+str(max(answer))
+    num = list(map(int,s.split(" ")))
+    return str(min(num))+" " + str(max(num))
