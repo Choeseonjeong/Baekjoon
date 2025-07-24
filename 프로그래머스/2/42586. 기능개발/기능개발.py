@@ -1,20 +1,23 @@
-# 기능개발
-import math
-from collections import deque
-
+from math import ceil 
 
 def solution(progresses, speeds):
-    a = []
-    stack = []
-    front = 0
-    for i in range(len(progresses)):
-        b = (100 - progresses[i]) / speeds[i]
-        a.append(math.ceil(b))
-
-    for i in range(len(a)):
-        if a[i] > a[front]:
-            stack.append(i - front)
-            front = i
-    stack.append(len(a) - front)
-
-    return stack
+    days = [ceil((100-p)/s) for p,s in zip(progresses, speeds)]
+    result = []
+    
+    max_day = days[0]
+    count = 1
+    
+    for i in range(1,len(days)):
+        if max_day >= days[i]: 
+            count+=1
+        else:
+            result.append(count)
+            max_day = days[i]
+            count=1
+    result.append(count)
+    return result
+            
+            
+            
+            
+            
