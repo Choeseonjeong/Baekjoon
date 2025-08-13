@@ -1,2 +1,3 @@
 def solution(n):
-    return sum(range(0, n + 1, 2))
+    answer = 0
+    return sum([i for i in range(1,n+1) if i%2==0])
