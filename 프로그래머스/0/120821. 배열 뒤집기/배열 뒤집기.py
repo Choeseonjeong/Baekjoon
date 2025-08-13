@@ -1,3 +1,3 @@
 def solution(num_list):
-    num_list.reverse()
-    return num_list
+    answer = []
+    return num_list[::-1]
