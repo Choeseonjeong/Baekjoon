@@ -1,6 +1,6 @@
 def solution(array, height):
-    count = 0
+    answer = 0
     for i in array:
-        if height < i:
-            count += 1
-    return count
+        if i > height:
+            answer+=1
+    return answer
