@@ -1,6 +1,3 @@
 def solution(numbers):
-    n = len(numbers)
-    m = 0
-    for i in numbers:
-        m += i
-    return m / n
+    answer = 0
+    return sum(numbers)/len(numbers)
