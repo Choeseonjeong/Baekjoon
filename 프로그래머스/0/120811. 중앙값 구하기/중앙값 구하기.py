@@ -1,4 +1,4 @@
 def solution(array):
-    mid = int(len(array) / 2)
+    answer = int(len(array)//2)
     array.sort()
-    return array[mid]
+    return array[answer]
