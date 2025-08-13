@@ -1,9 +1,9 @@
 def solution(num_list):
-    count = 0
-    counts = 0
+    answer = []
+    a,b = 0,0
     for i in num_list:
-        if i % 2 == 0:
-            count += 1
+        if i%2==0:
+            a+=1
         else:
-            counts += 1
-    return count, counts
+            b+=1
+    return [a,b]
