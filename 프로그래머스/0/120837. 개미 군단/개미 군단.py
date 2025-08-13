@@ -1,12 +1,6 @@
-def solution(hp):  
-    cnt = 0
-    cnt+=int(hp//5)
-    hp = hp%5
-    cnt+=int(hp//3)
-    hp = hp%3
-    cnt+=int(hp//1)
-    hp = hp%1
-    return cnt
-# 5
-# 3
-# 1
+def solution(hp):
+    answer = 0
+    for ant in [5, 3, 1]:
+        d, hp = divmod(hp, ant)
+        answer += d
+    return answer
