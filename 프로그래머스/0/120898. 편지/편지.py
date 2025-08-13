@@ -1,2 +1,3 @@
 def solution(message):
-    return 2 * len(message)
+    answer = 0
+    return len(message)*2
