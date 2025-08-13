@@ -1,6 +1,7 @@
 def solution(order):
-    answer = 0
-    for i in list(str(order)):
-        if i == '3' or i == '6' or  i == '9':
-            answer+=1
-    return answer
+    cnt = 0
+    arr = ["3","6","9"]
+    for i in str(order):
+        if i in arr:
+            cnt+=1
+    return cnt
