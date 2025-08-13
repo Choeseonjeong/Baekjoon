@@ -1,5 +1,3 @@
 def solution(n, t):
-    for i in range(t):
-        n=n*2
-    return n
-        
+    answer = 0
+    return n*2**t
