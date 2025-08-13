@@ -1,7 +1,4 @@
 def solution(numbers):
+    answer = 0
     numbers.sort()
-    return (
-        int(numbers[-1]) * int(numbers[-2])
-        if int(numbers[-1]) * int(numbers[-2]) > int(numbers[0]) * int(numbers[1])
-        else int(numbers[0]) * int(numbers[1])
-    )
+    return max(numbers[0]*numbers[1],numbers[-2]*numbers[-1])
