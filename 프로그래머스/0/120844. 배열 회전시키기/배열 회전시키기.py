@@ -1,5 +1,9 @@
 def solution(numbers, direction):
-    if direction == "right":
-        return [numbers[-1]] + numbers[:-1]
-    else:
-        return numbers[1:] + [numbers[0]]
+    answer = [0] * len(numbers)
+    
+    for i in range(len(numbers)):
+        if direction == 'right':
+            answer[(i+1) % len(numbers)] = numbers[i]
+        else:
+            answer[(i-1) % len(numbers)] = numbers[i]
+    return answer
