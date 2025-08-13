@@ -1,4 +1,4 @@
 def solution(sides):
-    for i in sides:
-        sides.sort()
-        return (1 if sides[2] < (sides[0] + sides[1]) else 2)
+    answer = 0
+    sides.sort()
+    return 1 if sides[0]+sides[1] > sides[2] else 2
