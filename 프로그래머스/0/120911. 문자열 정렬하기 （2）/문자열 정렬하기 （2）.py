@@ -1,4 +1,4 @@
-def solution(arr):
+def solution(my_string):
     answer = ''
-    arr = arr.lower()
-    return ''.join(sorted(arr))
+    my_string = my_string.lower()
+    return ''.join(sorted(my_string))
