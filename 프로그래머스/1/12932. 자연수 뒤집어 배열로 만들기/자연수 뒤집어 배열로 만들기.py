@@ -1,3 +1,4 @@
-
 def solution(n):
-    return list(reversed([int(i) for i in str(n)]))
+    s = list(map(int,list(str(n))))
+    s.reverse()
+    return s
