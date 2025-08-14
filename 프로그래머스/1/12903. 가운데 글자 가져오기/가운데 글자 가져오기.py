@@ -1,6 +1,3 @@
 def solution(s):
-    n = len(s)//2
-    if len(s)%2==0:
-        return s[n-1]+s[n]
-    else:
-        return s[n]
+    answer = len(s)//2
+    return s[answer-1]+s[answer] if len(s)%2==0 else s[answer]
