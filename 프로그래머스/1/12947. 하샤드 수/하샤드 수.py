@@ -1,10 +1,3 @@
 def solution(x):
-    answer=0
-    arr=list(str(x))
-    for i in arr:
-        answer+=int(i)
-    if x%answer==0:
-        return True
-    else:
-        return False
-    
+    answer = sum([int(i) for i in str(x)])
+    return True if x%answer == 0 else False
