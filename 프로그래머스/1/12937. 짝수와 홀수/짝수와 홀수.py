@@ -1,2 +1,3 @@
 def solution(num):
-    return 'Even' if num%2==0 else 'Odd'
+    answer = ''
+    return "Odd" if num%2!=0 else "Even"
