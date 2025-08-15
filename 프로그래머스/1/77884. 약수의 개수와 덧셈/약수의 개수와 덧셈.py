@@ -1,14 +1,15 @@
 def solution(left, right):
-    def ex(num):
-        cnt = 0
-        for i in range(1,num+1):
-            if num%i==0:
-                cnt+=1
-        return cnt
-    answer=0
-    for num in range(left, right+1):
-        if ex(num) % 2 == 0:
-            answer+=num
+    answer = 0
+    def minnum(n):
+        arr = []
+        for i in range(1,n+1):
+            if n%i==0:
+                arr.append(i)
+        return len(arr)
+    for n in range(left, right+1):
+        num = minnum(n)
+        if num%2 == 0:
+            answer+=n
         else:
-            answer-=num
+            answer-=n
     return answer
