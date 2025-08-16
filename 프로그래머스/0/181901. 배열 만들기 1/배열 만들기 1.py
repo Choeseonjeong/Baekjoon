@@ -1,4 +1,3 @@
-
 def solution(n, k):
-    return list(i for i in range(k, n + 1, k))
-
+    answer = []
+    return [i*k for i in range(1,n//k+1)]
