@@ -1,5 +1,3 @@
-a, b = input().strip().split(" ")
-b = int(b)
-
-for i in range(b):
-    print(a, end="")
+str, n = input().strip().split(' ')
+n = int(n)
+print(n*str)
