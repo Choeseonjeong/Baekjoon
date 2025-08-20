@@ -1,6 +1,3 @@
-def solution(strArr):
-    answer = [len(i) for i in strArr]
-    tmp = []
-    for i in set(answer):
-        tmp.append(answer.count(i))
-    return max(tmp)
+def solution(strArr):    
+    strArr = [len(i) for i in strArr]    
+    return max(strArr.count(i) for i in range(1, max(strArr) + 1))
