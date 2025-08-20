@@ -1,7 +1,8 @@
 def solution(a, b, c):
-    if a == b == c :
-        return (a+b+c)*(a**2 + b**2 + c**2 )*(a**3 + b**3 + c**3 )
+    answer = 0
+    if a==b and b==c and c==a:
+        return (a+b+c)*(a*a+b*b+c*c)*(a*a*a+b*b*b+c*c*c)
     elif a!=b and b!=c and c!=a:
-        return  a+b+c
+        return a+b+c
     else:
-        return  (a + b + c) *(a**2 + b**2 + c**2 )
+        return (a+b+c)*(a*a+b*b+c*c)
