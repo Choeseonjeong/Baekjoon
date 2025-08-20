@@ -1,6 +1,6 @@
 def solution(arr):
     answer = []
-    for idx, val in enumerate(arr):
-        for i in range(val):
-            answer.append(arr[idx])
+    for i in arr:
+        for j in range(i):
+            answer.append(i)
     return answer
