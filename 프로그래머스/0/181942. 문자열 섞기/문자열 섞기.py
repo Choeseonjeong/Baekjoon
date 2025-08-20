@@ -1,5 +1,6 @@
 def solution(str1, str2):
-    sum = ""
-    for i in range(0, len(str1)):
-        sum = sum + str1[i] + str2[i]
-    return sum
+    answer = ''
+    for i in range(len(str1)):
+        answer+=str1[i]
+        answer+=str2[i]
+    return answer
