@@ -1,2 +1,5 @@
 def solution(a, b):
-    return int(max(f"{a}{b}", f"{b}{a}"))
+    answer = 0
+    n = str(a)+str(b)
+    m = str(b)+str(a)
+    return int(n) if n>=m else int(m)
