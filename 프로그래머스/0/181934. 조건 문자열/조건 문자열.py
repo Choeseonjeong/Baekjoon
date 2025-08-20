@@ -1,5 +1,19 @@
-def solution(ineq, eq, n, m):
-    return int(eval(str(n)+ineq+eq.replace('!', '')+str(m)))
-
-
-
+def solution(ineq, eq, n, m):    
+    answer = 0
+    
+    if ineq == ">":
+        if eq == "=":
+            if n >= m:
+                answer = 1
+        else:
+            if n > m:
+                answer = 1
+    else:
+        if eq == "=":
+            if n <= m:
+                answer = 1
+        else:
+            if n < m:
+                answer = 1              
+                
+    return answer
