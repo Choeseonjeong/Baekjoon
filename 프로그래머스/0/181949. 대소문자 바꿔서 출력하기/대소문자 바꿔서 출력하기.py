@@ -1,7 +1,8 @@
 str = input()
-
+answer = ""
 for i in str:
-    if i.isupper() == True:
-        print(i.lower(), end="")
+    if i.isupper():
+        answer+=i.lower()
     else:
-        print(i.upper(), end="")
+        answer+=i.upper()
+print(answer)
