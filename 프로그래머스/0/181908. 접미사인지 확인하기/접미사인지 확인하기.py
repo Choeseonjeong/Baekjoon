@@ -1,5 +1,6 @@
 def solution(my_string, is_suffix):
-    arr = []
+    answer = []
     for i in range(len(my_string)):
-        arr.append(my_string[i:])
-    return int(is_suffix in arr)
+        if is_suffix == my_string[i:len(my_string)]:
+            return 1
+    return 0
