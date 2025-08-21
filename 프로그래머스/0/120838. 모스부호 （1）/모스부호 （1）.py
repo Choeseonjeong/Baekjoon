@@ -6,10 +6,7 @@ def solution(letter):
     '...':'s','-':'t','..-':'u','...-':'v','.--':'w','-..-':'x',
     '-.--':'y','--..':'z'
 }
-    print(morse['.-'])
-    
-    letter = letter.split(' ')
-    answer = []
-    for i in letter:
-        answer.append(morse[i])
-    return ''.join(answer)
+    answer = ''
+    for i in letter.split():
+        answer+=morse[i]
+    return answer
