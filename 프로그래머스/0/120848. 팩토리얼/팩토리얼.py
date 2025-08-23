@@ -1,8 +1,7 @@
+from math import factorial
+
 def solution(n):
-    answer = 1
-    while n>0:
-        n = n//answer
-        answer+=1
-        if n==1:
-            return answer-1
-    return answer-2
+    k = 10
+    while n < factorial(k):
+        k -= 1
+    return k
