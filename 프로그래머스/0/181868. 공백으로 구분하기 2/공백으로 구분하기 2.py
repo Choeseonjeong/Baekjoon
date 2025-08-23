@@ -1,2 +1,6 @@
 def solution(my_string):
-    return my_string.split()
+    answer = []
+    for i in my_string.split(" "):
+        if i:
+            answer.append(i)
+    return answer
