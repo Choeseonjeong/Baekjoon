@@ -1,3 +1,7 @@
 def solution(s):
-
-    return ' '.join(word.capitalize() for word in s.split(' '))
+    
+    lenS = s.split(" ")
+    for i in range(len(lenS)):
+        lenS[i] = lenS[i].capitalize()
+        answer = ' '.join(lenS)
+    return answer
