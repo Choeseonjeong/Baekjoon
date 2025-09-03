@@ -1,11 +1,13 @@
 def solution(people, limit):
+    boat = 0
     people.sort()
-    i = 0
-    j = len(people)-1
-    cnt=0
-    while i<=j:
-        if people[i]+people[j] <= limit:
-            i+=1
-        j-=1
-        cnt+=1
-    return cnt
+    
+    front,back = 0,len(people)-1
+    while front < back:
+        if people[front]+people[back] <= limit:
+            front+=1
+            boat+=1
+        back-=1
+    return len(people)-boat
+
+        
