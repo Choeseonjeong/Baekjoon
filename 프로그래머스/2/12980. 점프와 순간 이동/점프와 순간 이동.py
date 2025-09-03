@@ -1,2 +1,4 @@
 def solution(n):
-    return bin(n).count("1")
+    ans = 0
+    bin_n = bin(n)[2:]
+    return bin_n.count("1")
