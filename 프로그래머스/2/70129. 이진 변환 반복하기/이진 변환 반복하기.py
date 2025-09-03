@@ -1,12 +1,11 @@
 def solution(s):
-    cntzero = 0
-    cntnum = 0
+    bin_cnt = 0
+    zero = 0
     while True:
-        if s == '1':
+        if s == "1":
             break
-        cntzero+=s.count("0")
+        zero += s.count("0")
         s = s.replace("0","")
-        cntnum+=1
-        length = len(s)
-        s = bin(length)[2:]
-    return [cntnum,cntzero]
+        s = bin(len(s))[2:]    
+        bin_cnt+=1
+    return [bin_cnt,zero]
