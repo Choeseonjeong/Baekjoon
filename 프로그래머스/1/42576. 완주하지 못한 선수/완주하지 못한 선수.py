@@ -1,16 +1,13 @@
 def solution(participant, completion):
-    hash = {}
+    people = {}
     for i in participant:
-        if i in hash:
-            hash[i] += 1
+        if i not in people:
+            people[i] = 1
         else:
-            hash[i] = 1
-
-    for i in completion:
-        if hash[i] == 1:
-            del hash[i]
-        else:
-            hash[i] -= 1
-    answer = list(hash.keys())[0]
-    return answer
-
+            people[i] += 1
+    for j in completion:
+        if j in people:
+            people[j]-=1
+    for key,value in people.items():
+        if value != 0:
+            return key
