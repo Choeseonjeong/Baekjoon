@@ -1,15 +1,17 @@
 def solution(k, tangerine):
-    answer = 0
-    arr = {}
+    budget = {}
     for i in tangerine:
-        if i in arr:
-            arr[i]+=1
+        if i in budget:
+            budget[i]+=1
         else:
-            arr[i]=1
-    arr = dict(sorted(arr.items(),key=lambda x: x[1],reverse=True))
-    for i in arr:
+            budget[i]=1
+    a = sorted(budget.items(),key=lambda x : x[1],reverse=True)
+    answer = 0
+    for j in a:
+        x,y = j
+        k-=y
         if k<=0:
-            return answer
-        k-=arr[i]
-        answer+=1
-    return answer
+            break
+        else:
+            answer+=1
+    return answer+1
