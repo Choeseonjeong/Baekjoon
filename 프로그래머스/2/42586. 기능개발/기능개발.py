@@ -1,23 +1,16 @@
-from math import ceil 
-
+import math
 def solution(progresses, speeds):
-    days = [ceil((100-p)/s) for p,s in zip(progresses, speeds)]
+    days = [math.ceil((100-p)/s) for p,s in zip(progresses, speeds)]
     result = []
+    count = 0
+    current = days[0]
     
-    max_day = days[0]
-    count = 1
-    
-    for i in range(1,len(days)):
-        if max_day >= days[i]: 
+    for day in days:
+        if current >= day:
             count+=1
         else:
             result.append(count)
-            max_day = days[i]
-            count=1
+            count = 1
+            current = day
     result.append(count)
     return result
-            
-            
-            
-            
-            
