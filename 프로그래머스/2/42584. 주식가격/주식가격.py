@@ -1,10 +1,10 @@
 def solution(prices):
-    result = [0 for _ in range(len(prices))]
-    for idx, num in enumerate(prices): 
-        time = 0
-        for i in range(idx+1,len(prices)): 
-            time+=1
-            if num > prices[i]:
+    answer = []
+    for i in range(len(prices)):
+        count = 0
+        for j in range(i+1,len(prices)):
+            count+=1
+            if prices[i]>prices[j]:
                 break
-        result[idx] = time
-    return result
+        answer.append(count)
+    return answer
