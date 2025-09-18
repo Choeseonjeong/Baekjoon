@@ -1,16 +1,21 @@
 import math
+
 def solution(progresses, speeds):
-    days = [math.ceil((100-p)/s) for p,s in zip(progresses, speeds)]
-    result = []
-    count = 0
-    current = days[0]
+    answer = []
+    days = [math.ceil((100-progresses[i])/speeds[i]) for i in range(len(speeds))]
     
-    for day in days:
-        if current >= day:
+    one = days[0]
+    result = []
+    count = 1
+    
+    for i in range(1,len(days)):
+        if one >= days[i]:
             count+=1
         else:
+            one = days[i]
             result.append(count)
             count = 1
-            current = day
     result.append(count)
     return result
+            
+        
