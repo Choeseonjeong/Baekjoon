@@ -1,14 +1,12 @@
 import heapq
 
 def solution(scoville, K):
+    answer = 0
     heap = []
-    count = 0
     for i in scoville:
         heapq.heappush(heap,i)
-    
-    while heap[0] < K:
+    count = 0
+    while heap and heap[0] < K and len(heap) >= 2:
         heapq.heappush(heap,heapq.heappop(heap)+heapq.heappop(heap)*2)
-        count+=1
-        if len(heap)==1 and heap[0]<K:
-            return -1
-    return count
+        count += 1
+    return count if heap and heap[0] >= K else -1
