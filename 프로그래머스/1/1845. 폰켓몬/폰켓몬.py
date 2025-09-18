@@ -1,3 +1,3 @@
-import math
 def solution(nums):
-    return min(len(set(nums)), len(nums)/2)
+    answer = 0
+    return min((len(nums)//2), len(set(nums)))
