@@ -1,3 +1,4 @@
 def solution(s):
-    s = list(map(int,s.split(" ")))
-    return ' '.join([str(min(s)),str(max(s))])
+    answer = list(map(int,s.split(" ")))
+    return ' '.join(map(str,[min(answer),max(answer)]))
+
