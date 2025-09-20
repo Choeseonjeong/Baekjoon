@@ -1,25 +1,22 @@
 from collections import deque
 
 def solution(maps):
-    dx = (0,0,1,-1)
-    dy = (1,-1,0,0)
     n,m = len(maps),len(maps[0])
-    answer = 0
+    dx,dy =[-1,1,0,0],[0,0,-1,1]
+    visited = [[False]*m for _ in range(n)]
 
-    def bfs(x,y):
-        queue = deque()
-        queue.append((x,y))
-        
-        while queue:
-            x,y = queue.popleft()
-            for i in range(4):
-                nx = x+dx[i]
-                ny = y+dy[i]
-                if not (0 <= nx < n and 0 <= ny < m):continue
-                if maps[nx][ny]==0:continue
-                if maps[nx][ny]==1:
-                    maps[nx][ny] = maps[x][y]+1
-                    queue.append((nx, ny))
-        return maps[n-1][m-1]
-    answer = bfs(0,0)
-    return -1 if answer == 1 else answer
+    maps[0][0] = 1
+    visited[0][0] = True
+    
+    queue = deque()
+    queue.append((0,0))
+    
+    while queue:
+        x,y = queue.popleft()
+        for i in range(4):
+            nx,ny = x+dx[i],y+dy[i]
+            if (0<=nx<n and 0<=ny<m):
+                if maps[nx][ny] == 1 and not visited[nx][ny]:
+                    maps[nx][ny] = maps[x][y] + 1
+                    queue.append((nx,ny))
+    return maps[n-1][m-1] if maps[n-1][m-1] != 1 else -1
