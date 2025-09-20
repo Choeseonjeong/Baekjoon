@@ -1,11 +1,8 @@
 def solution(s):
-    bin_cnt = 0
-    zero = 0
-    while True:
-        if s == "1":
-            break
-        zero += s.count("0")
-        s = s.replace("0","")
-        s = bin(len(s))[2:]    
-        bin_cnt+=1
-    return [bin_cnt,zero]
+    a, b = 0, 0
+    while s != '1':
+        a += 1
+        num = s.count('1')
+        b += len(s) - num
+        s = bin(num)[2:]
+    return [a, b]
