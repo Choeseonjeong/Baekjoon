@@ -1,12 +1,12 @@
 def solution(phone_book):
-    dic = dict()
-    for nums in phone_book:
-        dic[nums] = 1
-        
-    for nums in phone_book:
-        word = ''
-        for num in nums:
-            word+=num
-            if word in dic and word!= nums:
+    arr = {}
+    answer = {}
+    for i in phone_book:
+        arr[i]=1
+    for num in phone_book:
+        ch = ''
+        for j in num:
+            ch+=j
+            if ch in arr and ch!= num:
                 return False
-    return True
+    return True 
