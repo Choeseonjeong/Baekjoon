@@ -1,7 +1,5 @@
 def solution(s):
-    
-    lenS = s.split(" ")
-    for i in range(len(lenS)):
-        lenS[i] = lenS[i].capitalize()
-        answer = ' '.join(lenS)
-    return answer
+    answer = []
+    for i in s.split(" "):
+        answer.append(i.capitalize())
+    return ' '.join(answer)
