@@ -1,8 +1,8 @@
 def solution(n):
-    answer = n+1
+    num = bin(n)[2:].count("1")
+    b = n
     while True:
-        if bin(n)[2:].count("1")==bin(answer)[2:].count("1"):
-            return answer
-        else:
-            answer+=1
-    
+        b+=1
+        b_num = bin(b)[2:].count("1")
+        if num == b_num:
+            return b
