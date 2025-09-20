@@ -1,20 +1,17 @@
 def solution(n, computers):
-    
-    def DFS(n,computers,computer,visited):
-        visited[computer] = True
-        for connect in range(n):
-            if connect != computer and computers[computer][connect] == 1:
-                if visited[connect]==False:
-                    DFS(n,computers,connect,visited)
-                
-    answer = 0
     visited = [False]*n
-    for computer in range(n):
-        if visited[computer] == False:
-            DFS(n,computers,computer,visited)
+    answer = 0
+    
+    def dfs(n,computers,com,visited):
+        visited[com] = True
+        for connect in range(n):
+            if com!=connect and computers[com][connect]==1 and not visited[connect]:
+                dfs(n,computers,connect,visited)
+    
+    for com in range(n):
+        if not visited[com]:
+            dfs(n,computers,com,visited)
             answer+=1
     return answer
-    
-    
     
     
