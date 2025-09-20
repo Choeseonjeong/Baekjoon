@@ -1,12 +1,18 @@
 def solution(skill, skill_trees):
+    words = []
+    flag = [True]*len(skill_trees)
     answer = 0
-    
-    for i in skill_trees:
-        tmp = ''
-        for j in i:
-            if j in skill:
-                tmp += j
+    for tree in skill_trees:
+        ch = ''
+        for text in tree:
+            if text in skill:
+                ch+=text
+        words.append(ch)
         
-        if tmp == skill[:len(tmp)]:
-        	answer+=1
-    return answer
+    for idx, word in enumerate(words):
+        for i in range(len(word)):
+            if word[i] != skill[i]:
+                flag[idx]=False
+    return flag.count(True)
+                
+        
