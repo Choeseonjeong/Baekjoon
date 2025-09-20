@@ -1,6 +1,6 @@
 def solution(numbers, target):
-    count = 0
     leaves = [0]
+    
     for num in numbers:
         temp = []
         for leaf in leaves:
