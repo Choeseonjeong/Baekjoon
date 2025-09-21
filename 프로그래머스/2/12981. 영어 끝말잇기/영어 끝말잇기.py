@@ -1,8 +1,9 @@
 def solution(n, words):
-    arr = [words[0]]
+    stack = [words[0]]
+    result = [0,0]
     for i in range(1,len(words)):
-        if words[i] not in arr and arr[-1][-1] == words[i][0]:
-            arr.append(words[i])
+        if stack[-1][-1] != words[i][0] or words[i] in stack:
+            return [i%n+1,i//n+1]
         else:
-            return [(i%n)+1,(i//n)+1]
-    return [0,0]
+            stack.append(words[i])
+    return result
