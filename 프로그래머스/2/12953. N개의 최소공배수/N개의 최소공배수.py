@@ -1,7 +1,10 @@
-from math import gcd 
+import math
 
 def solution(arr):
-    answer = arr[0]
-    for num in arr:
-        answer = (answer*num) // gcd(answer,num)
-    return answer
+    def lcm(a,b):
+        return a*b // math.gcd(a,b)
+    
+    n = arr[0]
+    for i in arr[1:]:
+        n = lcm(n,i)
+    return n
