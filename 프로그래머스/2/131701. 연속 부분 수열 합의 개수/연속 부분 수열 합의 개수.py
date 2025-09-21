@@ -1,8 +1,8 @@
 def solution(elements):
-    arr = elements*2
-    lennum = len(elements)
-    answer = set()
-    for num in range(1,lennum+1):
-        for i in range(num+lennum):
-            answer.add(sum(arr[i:i+num]))
-    return len(answer)
+    cir = set()
+    num = len(elements)
+    element = elements*2
+    for i in range(num):
+        for j in range(num):
+            cir.add(sum(element[j:j+i+1]))
+    return len(cir)
