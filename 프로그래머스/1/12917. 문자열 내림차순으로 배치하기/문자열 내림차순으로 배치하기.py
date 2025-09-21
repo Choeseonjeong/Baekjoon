@@ -1,6 +1,3 @@
 def solution(s):
     answer = ''
-    s = list(s)
-    s.sort()
-    s.reverse()
-    return "".join(s)
+    return ''.join(sorted(s,reverse=True))
