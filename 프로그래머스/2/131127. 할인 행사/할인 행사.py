@@ -1,15 +1,13 @@
+from collections import Counter
+
 def solution(want, number, discount):
     shop = {}
-    for i,j in zip(want, number):
-        shop[i] = j 
-    result = 0
-    num = len(discount)-9
+    for w,n in zip(want,number):
+        shop[w] = n
+    cnt = 0
     
-    for i in range(num): 
-        arr = discount[i:i+10]
-        for a in want:
-            if shop[a]>arr.count(a):
-                break
-        else:
-            result+=1
-    return result
+    for i in range(len(discount)-9):
+        days = discount[i:i+10]
+        if Counter(shop)==Counter(days):
+            cnt+=1
+    return cnt
