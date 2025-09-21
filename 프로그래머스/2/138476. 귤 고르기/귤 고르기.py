@@ -1,17 +1,13 @@
+from collections import Counter
+
 def solution(k, tangerine):
-    budget = {}
-    for i in tangerine:
-        if i in budget:
-            budget[i]+=1
-        else:
-            budget[i]=1
-    a = sorted(budget.items(),key=lambda x : x[1],reverse=True)
+    box = Counter(tangerine)
+    counts = sorted(box.values(), reverse=True)
+    
     answer = 0
-    for j in a:
-        x,y = j
-        k-=y
-        if k<=0:
+    for i in counts:
+        if k <= 0:
             break
-        else:
-            answer+=1
-    return answer+1
+        k -= i
+        answer+=1
+    return answer
