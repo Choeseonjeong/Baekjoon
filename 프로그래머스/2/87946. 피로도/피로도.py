@@ -2,14 +2,12 @@ from itertools import permutations
 
 def solution(k, dungeons):
     answer = 0
-    for arr in permutations(dungeons,len(dungeons)):
+    for i in permutations(dungeons):
         temp = k
-        count = 0
-        for i,j in arr: 
-            if temp >= i:
-                temp-=j
-                count+=1
-            else:
-                break
-        answer = max(answer,count)
+        cnt = 0
+        for essential, reduce in i:
+            if essential <= temp:
+                temp -= reduce
+                cnt += 1
+        answer = max(cnt,answer)
     return answer
