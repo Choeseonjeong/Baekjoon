@@ -1,6 +1,7 @@
 def solution(numbers):
-    answer = 0
-    for i in range(10):
+    nums = [i for i in range(10)]
+    num =0
+    for i in nums:
         if i not in numbers:
-            answer+=i
-    return answer
+            num+=i
+    return num
