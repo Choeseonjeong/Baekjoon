@@ -1,6 +1,7 @@
 def solution(n):
-    for i in range(1,n):
-        if n%i == 1:
-            answer =i
-            break
-    return answer
+    answer = 0
+    while True:
+        answer+=1
+        if n%answer==1:
+            return answer
+    
