@@ -1,3 +1,3 @@
 def solution(n):
-    n = sorted([i for i in str(n)],reverse=True)
-    return int(''.join(n))
+    answer = []
+    return int("".join(map(str,sorted((int(i) for i in str(n)),reverse=True))))
