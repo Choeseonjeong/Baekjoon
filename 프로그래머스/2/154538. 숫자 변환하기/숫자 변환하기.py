@@ -1,16 +1,18 @@
 from collections import deque
+from collections import deque
 
 def solution(x, y, n):
-    queue = deque([(x,0)]) # x, 횟수
-    visited = set([(x)]) #   방문 여부 
-
+    queue = deque()
+    queue.append((x,0))
+    visited = set()
     while queue:
-        num, count = queue.popleft()
-        if num == y:
-            return count
-        
-        for next_num in (num + n, num * 2, num * 3):
-            if next_num <= y and next_num not in visited:
-                visited.add(next_num)
-                queue.append((next_num, count + 1))
+        i, j = queue.popleft()
+        if i>y or i in visited:
+            continue
+        visited.add(i)
+        if i==y: 
+            return j
+        for k in (i*3,i*2,i+n):
+            if k<=y and k not in visited:
+                queue.append((k,j+1))    
     return -1
