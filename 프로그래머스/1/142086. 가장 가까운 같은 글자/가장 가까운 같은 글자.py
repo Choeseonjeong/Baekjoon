@@ -1,12 +1,7 @@
 def solution(s):
-    answer = []    
-    dic = {}
+    answerList = [-1]*len(s)
     for i in range(len(s)):
-        if s[i] in dic:
-            answer.append(i - dic[s[i]])
-            dic[s[i]] = i
-        else:
-            answer.append(-1)
-            dic[s[i]] = i
-    
-    return answer
+        for j in range(i):
+            if (s[i] == s[j]):
+                answerList[i] = i-j          
+    return answerList
