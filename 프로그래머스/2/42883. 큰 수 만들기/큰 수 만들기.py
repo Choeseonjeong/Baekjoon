@@ -1,5 +1,6 @@
+from collections import deque
 def solution(number, k):
-    answer = [] 
+    answer = deque()
     
     for num in number:
         while k > 0 and answer and answer[-1] < num:
@@ -7,4 +8,9 @@ def solution(number, k):
             k -= 1
         answer.append(num)
         
-    return ''.join(answer[:len(answer) - k])
+    while k > 0:
+        answer.pop()
+        k -= 1
+    return ''.join(answer)
+            
+            
