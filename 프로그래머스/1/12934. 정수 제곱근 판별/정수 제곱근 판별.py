@@ -1,7 +1,7 @@
-import math
-
 def solution(n):
-    num = math.sqrt(n)
+    
+    num = n**(1/2)
+    
     if num == int(num):
         return (num+1)**2
     else:
