@@ -1,15 +1,16 @@
 def solution(left, right):
+    def isprime(num):
+        count = 0
+        for i in range(1,num+1):
+            if num%i==0:
+                count+=1
+        return count
     answer = 0
-    def minnum(n):
-        arr = []
-        for i in range(1,n+1):
-            if n%i==0:
-                arr.append(i)
-        return len(arr)
-    for n in range(left, right+1):
-        num = minnum(n)
-        if num%2 == 0:
-            answer+=n
+    for idx in range(left,right+1):
+        if isprime(idx)%2==0:
+            answer+=idx
         else:
-            answer-=n
+            answer-=idx
     return answer
+    
+            
