@@ -1,25 +1,22 @@
 def solution(n, arr1, arr2):
-    def twoDemical(arr):
+    result = []
+    def maps(arr):
         num1 = []
         for i in arr:
-            a = bin(i)[2:]
-            a = '0' * (n - len(a)) + a
-            num1.append(list(a))  
+            num = bin(i)[2:]
+            if len(num)<n:
+                num = "0"*(n-len(num))+num
+            num1.append(num)
         return num1
+    ans1 = maps(arr1)
+    ans2 = maps(arr2)
     
-    num1 = twoDemical(arr1)
-    num2 = twoDemical(arr2)
-    
-    result = []
     for i in range(n):
-        temp = ""
+        ch = ''
         for j in range(n):
-            if num1[i][j] == "1" or num2[i][j] == "1":
-                temp += "#"
+            if ans1[i][j]=="1" or ans2[i][j]=="1":
+                ch += "#"
             else:
-                temp += " "
-        result.append(temp)
+                ch += " "
+        result.append(ch)
     return result
-
-
-
