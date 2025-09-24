@@ -1,13 +1,13 @@
 def solution(triangle):
     dp = triangle
-    depth = len(triangle)
-    for i in range(1,depth):
-        for j in range(i+1): # i+1 = 원소 갯수
-            if (j==0):
+    num = len(triangle)
+    
+    for i in range(1,num):
+        for j in range(i+1):
+            if j==0:
                 dp[i][j] += dp[i-1][j]
-            elif (j==i):
+            elif i==j:
                 dp[i][j] += dp[i-1][j-1]
             else:
                 dp[i][j] += max(dp[i-1][j],dp[i-1][j-1])
-    return max(dp[depth-1])
-            
+    return max(dp[num-1])
