@@ -1,3 +1,8 @@
 def solution(x):
-    answer = sum([int(i) for i in str(x)])
-    return True if x%answer == 0 else False
+    num = 0
+    for i in str(x):
+        num+=int(i)
+    if x%num==0:
+        return True
+    else:
+        return False
