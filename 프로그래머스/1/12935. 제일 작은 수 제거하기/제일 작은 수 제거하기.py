@@ -1,5 +1,11 @@
 def solution(arr):
     answer = []
-    num = arr.index(min(arr))
-    arr.pop(num)
-    return arr if arr else [-1]
+    num = min(arr)
+
+    for i in arr:
+        if num != i:
+            answer.append(i)
+    if answer:
+        return answer
+    else:
+        return [-1]
