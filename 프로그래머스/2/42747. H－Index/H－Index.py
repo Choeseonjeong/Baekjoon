@@ -1,8 +1,7 @@
-def solution(c):
-    c.sort(reverse = True)
+def solution(citations):
     answer = 0
-    for idx, book in enumerate(c):
-        if book >= idx+1:
-            h_index = idx+1
-            answer = h_index
-    return answer
+    citations.sort(reverse=True)
+    for i in range(len(citations)):              
+        if(citations[i] < i+1):
+            return i
+    return len(citations)                   
