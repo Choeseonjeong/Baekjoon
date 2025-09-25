@@ -1,24 +1,26 @@
 from collections import deque
 
 def solution(begin, target, words):
+    def differ(a,b):
+        count = 0
+        for i in range(len(a)):
+            if a[i]!=b[i]:
+                count+=1
+        return True if count==1 else False
+    
+    def bfs(begin,target,words):
+        queue = deque()
+        queue.append([begin,0])
+        
+        while queue:
+            text, depth = queue.popleft()
+            if target==text:
+                return depth
+        
+            for num in words:
+                if differ(text,num):
+                    queue.append((num,depth+1))
+                    
     if target not in words:
         return 0
-
-    L = len(begin)
-    q = deque([(begin, 0)])
-    visited = set([begin])
-
-    while q:
-        word, depth = q.popleft()
-        if word == target:
-            return depth
-
-        for text in words:
-            if text in visited:
-                continue
-            diff = sum(1 for i in range(L) if word[i] != text[i])
-            if diff == 1:
-                visited.add(text)
-                q.append((text, depth + 1))
-
-    return 0
+    return bfs(begin,target,words)
