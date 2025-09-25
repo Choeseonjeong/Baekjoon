@@ -1,17 +1,15 @@
 from collections import Counter
 
 def solution(topping):
-    num1 = Counter(topping)
-    num2 = set()
+    old = Counter(topping)
+    young = set()
     count = 0
-    
-    for i in topping:
-        num1[i] -= 1
-        num2.add(i)
-            
-        if num1[i] == 0:
-            num1.pop(i)
-            
-        if len(num1)==len(num2):
+    for num in topping:
+        if len(old) == len(young):
             count+=1
+        old[num]-=1
+        young.add(num)
+        if old[num] == 0:
+            old.pop(num)
     return count
+        
