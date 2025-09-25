@@ -1,2 +1,7 @@
 def solution(numbers):
-    return str(int(''.join(sorted(map(str,numbers),key=lambda x:x*6,reverse=True))))
+    answer = ''
+    numbers = list(map(str, numbers))
+    numbers = sorted(numbers,key=lambda x:x*6,reverse=True)
+    for i in numbers:            
+        answer += i
+    return str(int(answer))
