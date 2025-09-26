@@ -1,13 +1,20 @@
 from collections import deque
 
 def solution(priorities, location):
-    queue =  [(i,p) for i,p in enumerate(priorities)]
-    answer = 0
-    while True:
-        cur = queue.pop(0)
-        if any(cur[1] < q[1] for q in queue):
-            queue.append(cur)
+    arr = []
+    for idx, num in enumerate(priorities):
+        arr.append([idx,num])
+    queue = deque(arr)
+    stack = []
+    while queue:
+        idx,pri = queue.popleft()
+        if any(pri < k[1] for k in queue):
+            queue.append([idx,pri])
         else:
-            answer += 1
-            if cur[0] == location:
-                return answer
+            stack.append([idx,pri])
+    answer = 0
+    for num in stack:
+        answer+=1
+        if num[0]==location:
+            return answer
+        
