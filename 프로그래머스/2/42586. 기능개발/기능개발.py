@@ -1,17 +1,13 @@
 import math
-
 def solution(progresses, speeds):
-    answer = []
     days = [math.ceil((100-p)/s) for p,s in zip(progresses, speeds)]
     
-    cur = days[0]
-    count = 1
+    result = []
+    idx = 0
+    
     for i in range(1,len(days)):
-        if cur >= days[i]:
-            count += 1
-        else:
-            answer.append(count)
-            count = 1
-            cur = days[i]
-    answer.append(count)
-    return answer
+        if days[idx] < days[i]:
+            result.append(i-idx)
+            idx = i
+    result.append(i-idx+1)
+    return result
