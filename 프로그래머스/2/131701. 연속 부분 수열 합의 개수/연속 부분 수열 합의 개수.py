@@ -1,8 +1,9 @@
 def solution(elements):
-    cir = set()
-    num = len(elements)
+    eLen = len(elements)
     element = elements*2
-    for i in range(num):
-        for j in range(num):
-            cir.add(sum(element[j:j+i+1]))
-    return len(cir)
+    ans = set()
+    
+    for i in range(eLen):
+        for num in range(1,eLen+1): #  1,2,3,4,5 묶음
+            ans.add(sum(element[i:i+num]))
+    return len(list(ans))
