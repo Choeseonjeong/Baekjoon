@@ -1,13 +1,13 @@
 from collections import Counter
-
 def solution(k, tangerine):
-    box = Counter(tangerine)
-    counts = sorted(box.values(), reverse=True)
-    
-    answer = 0
-    for i in counts:
-        if k <= 0:
+    shop = Counter(tangerine)
+    count = 0
+    shop = sorted(shop.items(),key=lambda x: x[1],reverse=True)
+    for key,val in shop:
+        count+=1
+        k -= val
+        if k<=0:
             break
-        k -= i
-        answer+=1
-    return answer
+            
+    return count
+            
