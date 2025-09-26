@@ -1,11 +1,10 @@
 def solution(s):
-    answer = True
     stack = []
-    for word in s:
-        if not stack: 
-            stack.append(word)
-        elif stack and word == "(":
-            stack.append(word)
-        elif stack and word==")":
+    for i in s:
+        if i=="(":
+            stack.append(i)
+        elif stack and i==")":
             stack.pop()
+        else:
+            return False
     return True if len(stack)==0 else False
