@@ -1,12 +1,12 @@
 def solution(phone_book):
-    book = dict()
-    for i in phone_book:
-        book[i] = 1
+    hash_map = dict()
     for num in phone_book:
+        hash_map[num] = 1
+        
+    for number in hash_map:
         ch = ''
-        for n in num:
+        for n in number:
             ch+=n
-            if ch in book and ch!=num:
-                
+            if ch in hash_map and ch!=number:
                 return False
     return True
