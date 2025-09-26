@@ -1,11 +1,10 @@
 def solution(skill, skill_trees):
-    count = 0
-    arr = []
-    for word in skill_trees:
+    arr = 0
+    for tree in skill_trees:
         ch = ''
-        for i in word:
-            if i in skill:
-                ch+=i
+        for n in tree:
+            if n in skill:
+                ch+=n
         if skill[:len(ch)]==ch:
-            count+=1
-    return count
+            arr+=1
+    return arr
