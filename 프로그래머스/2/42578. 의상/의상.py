@@ -6,6 +6,6 @@ def solution(clothes):
         else:
             closet[kind] += [cloth]
     answer = 1
-    for i, j in closet.items():
-        answer*=(len(j)+1)
+    for key,val in closet.items():
+        answer*=(len(val)+1)
     return answer-1
