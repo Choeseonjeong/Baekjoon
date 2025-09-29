@@ -1,3 +1,6 @@
 def solution(n, numlist):
     answer = []
-    return [i for i in numlist if i%n==0]
+    for num in numlist:
+        if num%n==0:
+            answer.append(num)
+    return answer
