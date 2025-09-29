@@ -1,7 +1,8 @@
 def solution(num_list):
-    answer = 1
-    for i in num_list:
-        answer*=i
-    num = sum([i for i in num_list])
-    num = num*num
-    return int(answer<num)
+    ans1 = 1
+    ans2 = 0
+    for num in num_list:
+        ans1*=num
+        ans2 += num
+    ans2 = ans2*ans2
+    return 1 if ans1<ans2 else 0
