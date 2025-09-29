@@ -1,7 +1,4 @@
 def solution(order):
-    cnt = 0
-    arr = ["3","6","9"]
-    for i in str(order):
-        if i in arr:
-            cnt+=1
-    return cnt
+    num = [3,6,9]
+    answer = sum([1 for i in str(order) if int(i) in num])
+    return answer
