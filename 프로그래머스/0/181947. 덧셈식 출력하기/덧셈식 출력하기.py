@@ -1,2 +1,2 @@
 a, b = map(int, input().strip().split(' '))
-print(a,"+", b,"=",a+b)
+print(str(a)+" + "+str(b)+" = "+str(a + b))
