@@ -1,8 +1,4 @@
 def solution(n):
-    
-    num = n**(1/2)
-    
-    if num == int(num):
-        return (num+1)**2
-    else:
-        return -1
+    if int(n**0.5)==n**0.5:
+        return int(n**0.5+1)*int(n**0.5+1)
+    return -1
