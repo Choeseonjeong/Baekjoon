@@ -1,7 +1,5 @@
 def solution(num_list, n):
     answer = []
-    num = 0
-    for _ in range(len(num_list)//n):
-        answer.append(num_list[num:n+num])
-        num = num+n
+    for i in range(0,len(num_list),n):
+        answer.append(num_list[i:i+n])
     return answer
