@@ -1,3 +1,9 @@
 def solution(myStr):
-    answer = myStr.replace('a',' ').replace('b',' ').replace('c',' ')
-    return answer.split() or ["EMPTY"]
+    answer = []
+    for i in (myStr.replace("a"," ").replace("b"," ").replace("c"," ")).split(" "):
+        if i != "":
+            answer.append(i)
+    if len(answer)==0:
+        return ["EMPTY"]
+    else:
+        return answer
