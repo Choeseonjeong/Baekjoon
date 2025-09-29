@@ -1,5 +1,6 @@
 def solution(num, k):
-    num = list(str(num))
-    if str(k) in num:
-        return num.index(str(k))+1
-    return -1
+    answer = 0
+    for idx,num in enumerate(str(num)):
+        if int(num)==k:
+            return idx+1
+    return -1 
