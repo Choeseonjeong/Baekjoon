@@ -1,8 +1,8 @@
 def solution(my_string):
     answer = ''
-    for i in my_string:
-        if i.isupper():
-            answer+=i.lower()
+    for ch in my_string:
+        if ch.isupper():
+            answer+=ch.lower()
         else:
-            answer+=i.upper()
+            answer+=ch.upper()
     return answer
