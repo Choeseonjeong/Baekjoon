@@ -1,6 +1,5 @@
-def solution(arr, d):
+def solution(arr, intervals):
     answer = []
-    for i in d:
-        x,y = i
-        answer+=(arr[x:y+1])
+    for s,e in intervals:
+        answer+=arr[s:e+1]
     return answer
