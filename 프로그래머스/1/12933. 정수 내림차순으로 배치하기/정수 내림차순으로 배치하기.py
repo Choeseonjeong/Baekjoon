@@ -1,3 +1,6 @@
 def solution(n):
     answer = []
-    return int("".join(map(str,sorted((int(i) for i in str(n)),reverse=True))))
+    for i in str(n):
+        answer.append(i)
+    answer.sort(reverse=True)
+    return int(''.join(answer))
