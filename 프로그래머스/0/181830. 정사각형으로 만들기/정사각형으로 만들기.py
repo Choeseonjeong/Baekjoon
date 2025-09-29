@@ -1,14 +1,12 @@
 def solution(arr):
-    answer = []
-    row = len(arr)
-    col = len(arr[0])
-    if row > col: 
-        for ilist in arr:
-            ilist.extend([0]*(row-col))
-        return arr
-    elif row < col:
-        for _ in range(col-row):
-            arr.append([0]*col)
-        return arr
+    n=len(arr)
+    m=len(arr[0])
+    if n>m:
+        for i in range(n):
+            for j in range(n-m):
+                arr[i].append(0)
     else:
-        return arr
+        for i in range(m-n):
+            arr.append([0]*m)
+
+    return arr
