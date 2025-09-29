@@ -1,6 +1,9 @@
 def solution(myString, pat):
     answer = []
-    num = len(pat)
-    for i in range(len(myString)-num+1):
-        answer.append(myString[i:i+num])
-    return answer.count(pat)
+    count = 0
+    for i in range(len(myString)-len(pat)+1):
+        answer.append(myString[i:i+len(pat)])
+    for i in answer:
+        if i==pat:
+            count+=1
+    return count
