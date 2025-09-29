@@ -1,6 +1,3 @@
-def solution(arr):
-    answer=arr.split("x")
-    result = []
-    for i in answer:
-        result.append(len(i))
-    return result
+def solution(myString):
+    answer = [len(i) for i in myString.split("x")]
+    return answer
