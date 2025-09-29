@@ -1,4 +1,4 @@
 def solution(myString, pat):
     answer = 0
-    mystring = myString.lower().replace("a","B").replace("b","A")
-    return int(pat in mystring)
+    myString = myString.replace("A","C").replace("B","A").replace("C","B")
+    return 1 if pat in myString else 0
