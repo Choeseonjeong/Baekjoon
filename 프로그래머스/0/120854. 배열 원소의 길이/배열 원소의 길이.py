@@ -1,3 +1,3 @@
 def solution(strlist):
-    answer = []
-    return [len(i) for i in strlist]
+    answer = [len(i) for i in strlist]
+    return answer
