@@ -1,6 +1,6 @@
 def solution(my_string):
     answer = []
-    for i in my_string.split(" "):
-        if i:
-            answer.append(i)
+    for ch in my_string.split(" "):
+        if ch!="":
+            answer.append(ch)
     return answer
