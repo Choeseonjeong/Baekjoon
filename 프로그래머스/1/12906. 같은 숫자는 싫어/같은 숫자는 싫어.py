@@ -1,7 +1,7 @@
 def solution(arr):
-    answer = [arr[0]]
+    stack = []
     for num in arr:
-        if answer and answer[-1] != num:
-            answer.append(num) 
-        
-    return answer
+        if stack and stack[-1] == num:
+            continue
+        stack.append(num)
+    return stack
