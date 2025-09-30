@@ -1,5 +1,5 @@
 def solution(a, b):
-    num = 0
+    answer = 0
     for i,j in zip(a,b):
-        num+=j*i
-    return num
+        answer+=j*i
+    return answer
