@@ -1,16 +1,12 @@
 def solution(left, right):
-    def isprime(num):
-        count = 0
-        for i in range(1,num+1):
-            if num%i==0:
-                count+=1
-        return count
     answer = 0
-    for idx in range(left,right+1):
-        if isprime(idx)%2==0:
-            answer+=idx
+    for i in range(left,right+1):
+        count = 0
+        for j in range(1,i+1):
+            if i%j==0:
+                count+=1
+        if count%2==0:
+            answer+=i
         else:
-            answer-=idx
+            answer-=i
     return answer
-    
-            
