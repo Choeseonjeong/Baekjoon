@@ -1,12 +1,12 @@
-def solution(n):
-    num = 0
-    while n!= 1:
-        
-        if num>=500:
+def solution(num):
+    count = 0
+    while num != 1:
+        if count >= 500:
             return -1
-        if n%2==0:
-            n/=2
+        if num%2==0:
+            num /= 2
         else:
-            n = (n*3)+1
-        num+=1
-    return num
+            num = num*3 + 1
+        count += 1
+    return count 
+            
