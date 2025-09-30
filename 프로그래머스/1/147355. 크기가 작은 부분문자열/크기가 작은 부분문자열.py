@@ -1,8 +1,6 @@
 def solution(t, p):
-    n = len(p)
-    count = 0
-    for i in range(len(t)-n+1):
-        if int(t[i:i+n]) <= int(p):
-            count+=1
-    return count
-        
+    answer = 0
+    for i in range(len(t)-len(p)+1):
+        if int(t[i:i+len(p)]) <= int(p):
+            answer+=1
+    return answer
