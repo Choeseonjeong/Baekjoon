@@ -1,3 +1,3 @@
 def solution(seoul):
     answer = ''
-    return "김서방은 "+str(seoul.index("Kim"))+"에 있다"
+    return 	"김서방은 "+ str(seoul.index("Kim")) + "에 있다"
