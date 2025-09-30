@@ -1,13 +1,14 @@
 def solution(people, limit):
     people.sort()
-    front, back = 0,len(people)-1
-    count = 0
-    while front <= back:
-        if people[front] + people[back] > limit:
-            back -= 1
-            count += 1
+    front,end = 0,len(people)-1
+    answer = 0
+    
+    while front <= end:
+        if people[front] + people[end] <= limit:
+            answer += 1
+            front += 1
+            end -= 1
         else:
-            front+=1
-            back-=1
-            count+=1
-    return count
+            end -=1
+            answer += 1
+    return answer
