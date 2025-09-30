@@ -1,4 +1,2 @@
 def solution(s):
-    answer = ''
-    n = len(s)
-    return s[(n-1)//2 : n//2 + 1]
+    return s[len(s)//2] if len(s)%2==1 else s[len(s)//2-1]+s[len(s)//2]
