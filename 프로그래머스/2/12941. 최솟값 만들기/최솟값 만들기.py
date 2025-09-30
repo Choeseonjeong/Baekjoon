@@ -1,7 +1,7 @@
-def solution(a,b):
-    a.sort(reverse=True)
-    b.sort(reverse=False)
-    num = 0
-    for i in range(len(a)):
-        num+=a[i]*b[i]
-    return num
+def solution(A,B):
+    answer = 0
+    A.sort()
+    B.sort(reverse=True)
+    for i,j in zip(A,B):
+        answer+=j*i
+    return answer
