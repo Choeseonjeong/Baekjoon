@@ -1,14 +1,13 @@
 def solution(cards1, cards2, goal):
-    a, b, c = 0, 0, 0
-
-    while c < len(goal):
-        if a < len(cards1) and goal[c] == cards1[a]:
-            a += 1
-            c += 1
-        elif b < len(cards2) and goal[c] == cards2[b]:
-            b += 1
-            c += 1
-        else:
-            return "No"
-    
-    return "Yes"
+    one, two = 0,0
+    answer = []
+    for word in goal:
+        if one < len(cards1) and cards1[one] == word:
+            one += 1
+            answer.append(word)
+        if two < len(cards2) and cards2[two] == word:
+            two += 1
+            answer.append(word)
+    return "Yes" if len(answer) == len(goal) else "No"
+        
+            
