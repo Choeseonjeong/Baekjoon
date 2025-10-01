@@ -1,6 +1,6 @@
 def solution(array, commands):
     answer = []
-    for start,end,idx in commands:
-        arr = sorted(array[start-1:end])
-        answer.append(arr[idx-1])
+    for i,j,k in commands:
+        num = sorted(array[i-1:j])
+        answer.append(num[k-1])
     return answer
