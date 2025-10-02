@@ -1,15 +1,14 @@
 def solution(participant, completion):
-    peoples = dict()
+    dic = dict()
     for i in participant:
-        if i not in peoples:
-            peoples[i] = 1
+        if i in dic:
+            dic[i] += 1
         else:
-            peoples[i] += 1
-    for i in completion:
-        peoples[i] -= 1 
-        if peoples[i]==0:
-            peoples.pop(i)
-    answer = ''
-    for i in peoples.keys():
-        answer+=i
-    return answer
+            dic[i] = 1
+    for j in completion:
+        if j in dic:
+            dic[j] -= 1
+    answer = []
+    for key,value in dic.items():
+        if value > 0:
+            return key
