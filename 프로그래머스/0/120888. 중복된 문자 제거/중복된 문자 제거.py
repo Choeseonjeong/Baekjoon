@@ -1,6 +1,8 @@
 def solution(my_string):
-    answer = ''
+    ans = ''
+    result = ''
     for i in my_string:
-        if i not in answer:
-            answer+=i
-    return answer
+        if i not in ans:
+            ans+=i
+            result+=i
+    return result
