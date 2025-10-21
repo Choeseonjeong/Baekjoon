@@ -1,4 +1,5 @@
-import math
 def solution(slice, n):
-    answer = 0
-    return math.ceil(n/slice)
+    if n%slice == 0:
+        return n//slice
+    else:
+        return n//slice + 1
