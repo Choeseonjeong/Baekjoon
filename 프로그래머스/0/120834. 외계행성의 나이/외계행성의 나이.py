@@ -1,5 +1,5 @@
 def solution(age):
-    answer = ''
-    for i in str(age):
-        answer += chr(int(i) + 97)
-    return answer
+    ans = ''
+    for i in list(str(age)):
+        ans += chr(int(i)+97)
+    return ans
