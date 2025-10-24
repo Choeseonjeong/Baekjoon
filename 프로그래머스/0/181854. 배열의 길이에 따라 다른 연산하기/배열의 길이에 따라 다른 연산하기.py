@@ -1,10 +1,5 @@
 def solution(arr, n):
-    answer = []
-    for idx, val in enumerate(arr):
-        if len(arr)%2==1:
-            if idx%2==0:
-                arr[idx]+=n
-        if len(arr)%2==0:
-            if idx%2==1:
-                arr[idx]+=n
-    return arr
+    if len(arr) % 2 == 1:
+        return [arr[i] + n if i % 2 == 0 else arr[i] for i in range(len(arr))]
+    else:
+        return [arr[i] + n if i % 2 == 1 else arr[i] for i in range(len(arr))]
