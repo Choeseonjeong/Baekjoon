@@ -1,6 +1,8 @@
 def solution(box, n):
-    answer = 1
-    box = [i//n for i in box]
+    arr = []
+    num = 1
     for i in box:
-        answer*=i
-    return answer
+        arr.append(i//n)   
+    for i in arr:
+        num *= i
+    return num
