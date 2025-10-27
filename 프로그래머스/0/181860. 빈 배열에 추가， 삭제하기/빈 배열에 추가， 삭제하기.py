@@ -1,8 +1,9 @@
 def solution(arr, flag):
-    result = []
-    for key, value in zip(arr, flag):
-        if value == True :
-            result.extend([key] * (key*2))
+    answer = []
+    for a,f in zip(arr,flag):
+        if f == True:
+            answer += [a] * (a * 2)
         else:
-            del result[-key:]
-    return result
+            answer = answer[:-a]
+    return answer
+            
