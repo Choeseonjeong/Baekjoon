@@ -1,3 +1,5 @@
 def solution(myString, pat):
     answer = ''
-    return myString[:myString.rindex(pat)+len(pat)]
+    num = myString.rfind(pat)
+    answer += myString[0:num+len(pat)]
+    return answer
