@@ -1,3 +1,5 @@
-def solution(strArr):    
-    strArr = [len(i) for i in strArr]    
-    return max(strArr.count(i) for i in range(1, max(strArr) + 1))
+def solution(strArr):
+    arr = [0]*31
+    for i in strArr:
+        arr[len(i)-1]+=1
+    return max(arr)
