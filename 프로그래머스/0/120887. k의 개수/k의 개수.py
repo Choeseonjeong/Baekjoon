@@ -1,5 +1,7 @@
 def solution(i, j, k):
-    count = 0
+    answer = 0
     for num in range(i,j+1):
-        count+=str(num).count(str(k))
-    return count
+        for n in list(str(num)):
+            if n == str(k):
+                answer += 1
+    return answer
