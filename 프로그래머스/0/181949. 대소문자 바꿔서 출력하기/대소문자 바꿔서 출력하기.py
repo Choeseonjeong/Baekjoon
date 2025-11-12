@@ -1,5 +1,5 @@
 str = input()
-answer = ""
+answer = ''
 for i in str:
     if i.isupper():
         answer+=i.lower()
