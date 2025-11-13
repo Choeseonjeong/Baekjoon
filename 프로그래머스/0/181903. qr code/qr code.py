@@ -1,3 +1,6 @@
 def solution(q, r, code):
     answer = ''
-    return code[r::q]
+    for idx, word in enumerate(code):
+        if idx%q == r:
+            answer += word
+    return answer
