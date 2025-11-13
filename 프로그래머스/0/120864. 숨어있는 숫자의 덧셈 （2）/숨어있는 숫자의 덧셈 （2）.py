@@ -1,7 +1,11 @@
 def solution(my_string):
-    for i in my_string:
-        if i.isalpha():
-            my_string = my_string.replace(i, ' ')
-    my_string = my_string.split()
-    
-    return sum(list(map(int, my_string)))
+    answer = 'abcdefghijklmnopqrstuvwxyz'
+    num = 0
+    my_string = my_string.lower()
+    for word in my_string:
+        if word in answer:
+            my_string = my_string.replace(word," ")
+    for text in my_string.split(" "):
+        if text != '':
+            num += int(text)
+    return num
