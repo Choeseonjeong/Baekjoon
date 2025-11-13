@@ -1,22 +1,13 @@
 def solution(array):
-    num = {}
-    for i in array:
-        if i in num:
-            num[i]+=1
+    arr = {}
+    for n in array:
+        if n in arr:
+            arr[n] += 1
         else:
-            num[i]=1
-            
-    answer = -1
-    max_count = 0
-    multiple = False
-    
-    for key,value in num.items():
-        if value > max_count:
-            answer, max_count = key, value
-            multiple = False
-        elif value == max_count:
-            multiple = True
-    if multiple:
+            arr[n] = 1
+    maxnum = max(arr.values())
+    result = [k for k, v in arr.items() if v == maxnum]
+    if len(result) > 1:
         return -1
-    return answer
-    
+    else:
+        return result[0]
