@@ -1,7 +1,7 @@
-# 존재한다면 2 ㄴㄴ면 2
+import itertools
 def solution(spell, dic):
-    spell = set(spell)
-    for word in dic:
-        if not spell - set(word):
+    arr = [''.join(p) for p in itertools.permutations(spell, len(spell))]
+    for word in arr:
+        if word in dic:
             return 1
     return 2
