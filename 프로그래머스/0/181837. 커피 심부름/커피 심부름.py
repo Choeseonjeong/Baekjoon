@@ -1,11 +1,10 @@
 def solution(order):
+    a = ["iceamericano", "americanoice","hotamericano", "americanohot","americano","anything"]
+    b = ["icecafelatte", "cafelatteice","hotcafelatte", "cafelattehot","cafelatte"]
     answer = 0
     for word in order:
-        if "americano" in word:
-            answer+=4500
-        elif "cafelatte" in word:
-            answer+=5000
-        elif "anything" in word:
-            answer+=4500
-            
+        if word in a:
+            answer += 4500
+        else:
+            answer += 5000
     return answer
