@@ -1,12 +1,9 @@
 def solution(my_string):
-    answer = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
-    num = [0]*52
-    nums = {}
-    for key, value in zip(answer, num):
-        nums[key] = value
-    for i in my_string:
-        nums[i]+=1
-    result = []
-    for i in nums:
-        result.append(nums[i])
-    return result
+    word = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
+    arr = {}
+    for n in word:
+        arr[n] = 0
+    for text in my_string:
+        if text in arr:
+            arr[text] += 1
+    return [n for n in arr.values()]
