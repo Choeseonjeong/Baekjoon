@@ -1,6 +1,3 @@
 def solution(emergency):
-    answer = []
-    temp = sorted(emergency, reverse=True)
-    for i in emergency:
-        answer.append(temp.index(i)+1)
-    return answer
+    sorted_list = sorted(emergency, reverse=True)  
+    return [sorted_list.index(x) + 1 for x in emergency]
