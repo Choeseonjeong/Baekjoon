@@ -1,18 +1,15 @@
 def solution(arr):
-    answer = []
-    
-    for i in range(len(arr)):
-        if not answer:
-            answer.append(arr[i])
-        else:
-            if answer[-1] == arr[i]:
-                answer.pop()
-                i += 1
-            elif answer[-1] != arr[i]:
-                answer.append(arr[i])
-                i += 1
-    
-    if len(answer) == 0:
-        return [-1]
-    
-    return answer
+    stk = []
+    for num in arr:
+        if len(stk)==0:
+            stk.append(num)
+        elif stk[-1] == num:
+            stk.pop()
+        elif stk[-1] != num:
+            stk.append(num)
+    return stk if len(stk) != 0 else [-1]
+        
+
+# 빈 배열이면 arr[i] 추가
+# 마지막 원소가 같으면 마지막 원소 제거
+# 다르면 추가 
