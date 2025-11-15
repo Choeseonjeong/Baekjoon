@@ -1,12 +1,7 @@
 def solution(n):
-    answer = []
-    
-    x = 2
-    while x <= n:
-        if n % x == 0:
-            if x not in answer:
-                answer.append(x)
-            n //= x
-        else:
-            x += 1
-    return answer
+    answer = set()
+    for i in range(2,n+1):
+        while n % i == 0:
+            answer.add(i)
+            n = n // i
+    return sorted(list(answer))
