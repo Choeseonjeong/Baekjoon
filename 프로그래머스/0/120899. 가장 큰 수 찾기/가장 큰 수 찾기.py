@@ -1,3 +1,3 @@
 def solution(array):
-    num = sorted(array)[-1]
-    return [num,array.index(num)]
+    answer = []
+    return [max(array),array.index(max(array))]
