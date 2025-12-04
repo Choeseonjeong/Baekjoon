@@ -1,8 +1,8 @@
 str = input()
 answer = ''
-for i in str:
-    if i.isupper():
-        answer+=i.lower()
+for word in str:
+    if word.isupper():
+        answer+=word.lower()
     else:
-        answer+=i.upper()
+        answer+=word.upper()
 print(answer)
