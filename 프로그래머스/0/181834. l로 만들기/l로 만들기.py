@@ -1,9 +1,8 @@
 def solution(myString):
-    answer = 'abcdefghijk'
-    ch = ''
-    for i in myString:
-        if i in answer:
-            ch+="l"
+    answer = ''
+    for word in myString:
+        if word in ['a','b','c','d','e','f','g','h','i','j','k']:
+            answer+='l'
         else:
-            ch+=i
-    return ch
+            answer+=word
+    return answer
