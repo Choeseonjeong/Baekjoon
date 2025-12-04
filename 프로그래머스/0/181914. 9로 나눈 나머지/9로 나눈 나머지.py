@@ -1,3 +1,3 @@
 def solution(number):
-    answer = sum([int(i) for i in number])
-    return answer%9
+    answer = 0
+    return int(number)%9
