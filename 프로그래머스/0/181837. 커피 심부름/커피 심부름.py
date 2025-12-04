@@ -1,10 +1,13 @@
 def solution(order):
-    a = ["iceamericano", "americanoice","hotamericano", "americanohot","americano","anything"]
+    charge = 0
+    a = ["iceamericano", "americanoice","hotamericano", "americanohot""americano","anything","americano"]
     b = ["icecafelatte", "cafelatteice","hotcafelatte", "cafelattehot","cafelatte"]
-    answer = 0
+    
     for word in order:
         if word in a:
-            answer += 4500
+            charge+=4500
+        elif word in b:
+            charge += 5000
         else:
-            answer += 5000
-    return answer
+            charge+=4500
+    return charge
