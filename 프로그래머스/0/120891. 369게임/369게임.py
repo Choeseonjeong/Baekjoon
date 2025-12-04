@@ -1,4 +1,6 @@
 def solution(order):
-    num = [3,6,9]
-    answer = sum([1 for i in str(order) if int(i) in num])
-    return answer
+    count = 0
+    for num in str(order):
+        if int(num) in [3,6,9]:
+            count+=1
+    return count
