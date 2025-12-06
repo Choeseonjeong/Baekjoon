@@ -1,8 +1,4 @@
 def solution(before, after):
-    answer = 0
-    before = sorted(list(before))
-    after = sorted(list(after))
-    for i in range(len(before)):
-        if before[i]!=after[i]:
-            return 0
-    return 1
+    a = sorted(list((before)))
+    b = sorted(list((after)))
+    return 1 if a==b else 0
