@@ -1,6 +1,7 @@
 def solution(s):
     answer = ''
-    for c in 'abcdefghijklmnopqrstuvwxyz':
-        if s.count(c)==1:
-            answer += c
-    return answer
+    words = set(s)
+    for word in words:
+        if s.count(word) == 1:
+            answer+=word
+    return ''.join(sorted(answer))
