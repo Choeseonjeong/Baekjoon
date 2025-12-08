@@ -1,6 +1,6 @@
 def solution(a, d, included):
-    answer = 0
-    for idx, flag in enumerate(included):
-        if flag == True:
-            answer += a+idx*d
-    return answer
+    num = 0
+    for i in range(len(included)):
+        if included[i] == True:
+            num += d*(i) + a
+    return num
