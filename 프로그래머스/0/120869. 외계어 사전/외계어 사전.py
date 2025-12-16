@@ -1,7 +1,8 @@
-import itertools
+from itertools import permutations
 def solution(spell, dic):
-    arr = [''.join(p) for p in itertools.permutations(spell, len(spell))]
-    for word in arr:
+    arr = []
+    for i in permutations(spell,len(spell)):
+        word = ''.join(i)
         if word in dic:
             return 1
     return 2
