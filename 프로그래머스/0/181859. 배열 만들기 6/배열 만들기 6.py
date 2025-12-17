@@ -1,15 +1,13 @@
 def solution(arr):
     stk = []
-    for num in arr:
-        if len(stk)==0:
-            stk.append(num)
-        elif stk[-1] == num:
-            stk.pop()
-        elif stk[-1] != num:
-            stk.append(num)
-    return stk if len(stk) != 0 else [-1]
-        
-
-# 빈 배열이면 arr[i] 추가
-# 마지막 원소가 같으면 마지막 원소 제거
-# 다르면 추가 
+    for i in range(len(arr)):
+        if not stk:
+            stk.append(arr[i])
+            i+=1
+        elif len(stk)>0 and stk[-1]==arr[i]:
+            del stk[-1:]
+            i+=1
+        elif len(stk) > 0 and stk[-1]!=arr[i]:
+            stk.append(arr[i])
+            i+=1
+    return stk if stk else [-1]
