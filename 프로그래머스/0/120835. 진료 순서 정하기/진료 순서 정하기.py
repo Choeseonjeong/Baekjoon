@@ -1,3 +1,8 @@
 def solution(emergency):
-    sorted_list = sorted(emergency, reverse=True)  
-    return [sorted_list.index(x) + 1 for x in emergency]
+    answer = {}
+    for idx,num in enumerate(sorted(emergency,reverse=True)):
+        answer[num] = idx+1
+    result = []
+    for i in emergency:
+        result.append(answer[i])
+    return result
