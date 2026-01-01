@@ -1,10 +1,8 @@
 def solution(quiz):
-    answer = []
-    for word in quiz:
-        arr = [eval(i.strip()) for i in word.split("=")]
-        if arr[0] == arr[1]:
-            answer.append("O")
+    arr = []
+    for text in quiz:
+        if eval(text.split(" = ")[0]) == int(text.split(" = ")[1]):
+            arr.append("O")
         else:
-            answer.append("X")
-            
-    return answer
+            arr.append("X")
+    return arr
