@@ -1,10 +1,12 @@
 def solution(s):
     answer = 0
-    ex = 0
-    for num in s.split(" "):
-        if num != "Z":
-            ex = int(num) 
-            answer += int(num)
+    control = 0
+    for num in s.split():
+        if num == 'Z':
+            answer -= control
         else:
-            answer -= ex
-    return answer
+            control = int(num)
+            answer += int(num)
+    return answer            
+            
+            
