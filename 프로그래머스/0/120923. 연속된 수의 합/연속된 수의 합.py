@@ -1,6 +1,7 @@
 def solution(num, total):
     answer = []
-    if num%2==1:
-        return list(range(total//num-num//2,total//num+num//2+1))
-    else:
-        return list(range(total//num-num//2+1,total//num+num//2+1))
+    var = sum(range(num+1))
+    diff = total - var
+    start_num = diff//num
+    answer = [i+1+start_num for i in range(num)]
+    return answer
