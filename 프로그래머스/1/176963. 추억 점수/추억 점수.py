@@ -1,15 +1,15 @@
 def solution(name, yearning, photo):
-    dic = {}
-    for n,y in zip(name, yearning):
-        dic[n] = y
-        
-    result = []
-    for group in photo:
-        ans = 0
-        for people in group:
-            if people in dic:
-                ans += dic[people]
+    answer = []
+    arr = {}
+    for n,y in zip(name,yearning):
+        arr[n] = y
+    
+    for a in photo:
+        num = 0
+        for b in a:
+            if b in arr:
+                num += arr[b]
             else:
-                ans += 0
-        result.append(ans)
-    return result
+                num+=0
+        answer.append(num)
+    return answer
