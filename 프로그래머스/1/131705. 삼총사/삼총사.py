@@ -1,8 +1,8 @@
-from itertools import combinations
-
+import itertools 
 def solution(number):
-    count = 0
-    for arr in combinations(number,3):
-        if sum(arr)==0:
-            count += 1
-    return count
+    arr = []
+    for i in itertools.combinations(number,3):
+        num = sum(i)
+        arr.append(num)
+    return arr.count(0)
+        
