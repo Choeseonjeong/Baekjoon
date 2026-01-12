@@ -1,11 +1,11 @@
 def solution(clothes):
-    closet = dict()
-    for cloth,kind in clothes:
-        if kind not in closet:
-            closet[kind] = [cloth]
-        else:
+    closet = {}
+    num = 1
+    for cloth, kind in clothes:
+        if kind in closet:
             closet[kind] += [cloth]
-    answer = 1
-    for key,val in closet.items():
-        answer*=(len(val)+1)
-    return answer-1
+        else:
+            closet[kind] = [cloth]
+    for _,i in closet.items():
+        num *= (len(i)+1)
+    return num-1
