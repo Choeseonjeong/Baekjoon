@@ -1,9 +1,9 @@
 def solution(n):
-    num = n+1
+    answer = n+1
     while True:
-        num_s = bin(num)[2:]
-        n_s = bin(n)[2:]
-        if num_s.count("1") == n_s.count("1"):
-            return num
+        a = bin(n)[2:]
+        b = bin(answer)[2:]
+        if a.count('1') == b.count('1'):
+            return answer
         else:
-            num+=1
+            answer+=1
