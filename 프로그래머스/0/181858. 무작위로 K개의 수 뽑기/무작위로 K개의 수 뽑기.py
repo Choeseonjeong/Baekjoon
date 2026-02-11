@@ -1,10 +1,10 @@
 def solution(arr, k):
-    answer = []
+    num = [-1] * k
+    ar = []
     for i in arr:
-        if i not in answer:
-            answer.append(i)
-        if len(answer) >= k:
-            break
-    while len(answer) < k:
-        answer += [-1]
-    return answer
+        if i not in ar:
+            ar.append(i)
+    
+    for i in range(min(k,len(ar))):
+        num[i] = ar[i]
+    return num
