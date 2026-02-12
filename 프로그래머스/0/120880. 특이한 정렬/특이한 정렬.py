@@ -1,2 +1,3 @@
 def solution(numlist, n):
-    return sorted(numlist,key = lambda x: (abs(n-x),(n-x)) )
+    answer = []
+    return sorted(numlist,key=lambda x:(abs(n-x),n-x))
