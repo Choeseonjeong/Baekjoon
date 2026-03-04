@@ -1,10 +1,10 @@
 def solution(numbers, target):
-    leaves = [0]
+    result = [0]
     
     for num in numbers:
         temp = []
-        for leaf in leaves:
-            temp.append(leaf-num)
-            temp.append(leaf+num)
-        leaves = temp
-    return leaves.count(target)
+        for r in result:
+            temp.append(r+num)
+            temp.append(r-num)
+        result = temp
+    return result.count(target)
