@@ -1,12 +1,15 @@
 def solution(left, right):
-    answer = 0
-    for i in range(left,right+1):
-        count = 0
-        for j in range(1,i+1):
-            if i%j==0:
-                count+=1
-        if count%2==0:
-            answer+=i
+    result = 0
+    def isPrime(n):
+        num = 0
+        for i in range(1,n+1):
+            if n%i==0:
+                num+=1
+        return num
+    
+    for a in range(left, right+1):
+        if isPrime(a)%2==0:
+            result+=a
         else:
-            answer-=i
-    return answer
+            result-=a
+    return result
