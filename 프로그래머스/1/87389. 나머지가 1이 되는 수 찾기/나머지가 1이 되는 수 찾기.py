@@ -1,5 +1,5 @@
 def solution(n):
-    answer = 1
-    while (n%answer!=1):
-        answer+=1
-    return answer
+    for i in range(2,n+1):
+        if n%i==1:
+            return i
+    
