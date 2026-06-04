@@ -1,3 +1,10 @@
 def solution(s):
     s = s.lower()
-    return True if s.count("p")==s.count("y") else False
+    p = s.count('p')
+    y = s.count('y')
+    if p==0 and y==0:
+        return True
+    elif p==y: 
+        return True
+    elif p!=y:
+        return False
