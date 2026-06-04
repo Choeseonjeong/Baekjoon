@@ -1,8 +1,8 @@
 def solution(absolutes, signs):
     answer = 0
-    for num, flag in zip(absolutes, signs):
-        if flag == True:
-            answer+=num
+    for a,s in zip(absolutes, signs):
+        if s == True:
+            answer+=a
         else:
-            answer-=num
+            answer-=a
     return answer
