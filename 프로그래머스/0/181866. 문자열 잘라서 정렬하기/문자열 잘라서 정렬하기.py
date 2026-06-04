@@ -1,3 +1,6 @@
 def solution(myString):
-    answer = [i for i in myString.split("x") if i!="" ]
+    answer = []
+    for ch in myString.split('x'):
+        if ch != '':
+            answer.append(ch)
     return sorted(answer)
