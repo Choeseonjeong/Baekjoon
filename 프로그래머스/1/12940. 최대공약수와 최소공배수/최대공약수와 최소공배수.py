@@ -1,3 +1,5 @@
 import math
+
 def solution(n, m):
-    return [math.gcd(n,m),n*m//math.gcd(n,m)]
+    num = math.gcd(n,m)
+    return [num, n // math.gcd(n, m) * m]
