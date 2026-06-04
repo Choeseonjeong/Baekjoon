@@ -1,3 +1,3 @@
 def solution(x):
-    answer = sum([int(i) for i in str(x)])
-    return True if x%answer==0 else False
+    answer = sum([int(n) for n in str(x)])
+    return True if x%answer == 0 else False
