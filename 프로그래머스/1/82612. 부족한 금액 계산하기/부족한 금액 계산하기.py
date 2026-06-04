@@ -1,6 +1,5 @@
 def solution(price, money, count):
-    answer = 0
-    while answer < count:
-        answer += 1
-        money -= price*answer
-    return abs(money) if money < 0 else 0
+    num = 0
+    for i in range(1,count+1):
+        num += price*i
+    return num-money if num >= money else 0
