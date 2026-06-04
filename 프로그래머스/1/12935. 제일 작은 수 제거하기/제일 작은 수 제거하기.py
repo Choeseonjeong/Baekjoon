@@ -1,5 +1,6 @@
 def solution(arr):
-    if len(arr) == 1:
+    answer = []
+    num = min(sorted(arr))
+    if len(arr)<=1:
         return [-1]
-    arr.remove(min(arr))  
-    return arr
+    return [i for i in arr if i!= num]
