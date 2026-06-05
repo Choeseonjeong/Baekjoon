@@ -1,8 +1,6 @@
 def solution(s):
-    
-    check = s.split(' ')
-    
-    for i in range(len(check)):
-        check[i] = check[i].capitalize()
-        
-    return ' '.join(check)
+    answer = ''
+    for ch in s.split(' '):
+        answer+=ch.capitalize()
+        answer+=' '
+    return answer[:-1]
