@@ -1,7 +1,4 @@
 def solution(A,B):
-    answer = 0
-    A.sort()
-    B.sort(reverse=True)
-    for i,j in zip(A,B):
-        answer+=j*i
-    return answer
+    A = sorted(A)
+    B = sorted(B,reverse=True)
+    return sum([A[i]*B[i] for i in range(len(A))])
