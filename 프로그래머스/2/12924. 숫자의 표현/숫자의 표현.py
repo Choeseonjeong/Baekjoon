@@ -1,14 +1,11 @@
 def solution(n):
-    answer = 0
-    for i in range(1,n+1):
-        num = i
-        if i == n:
-            answer+=1
-        for j in range(i+1,n+1):
-            num+=j 
-            if num > n:
+    count = 0
+    for a in range(1,n+1):
+        total = 0
+        for b in range(a, n+1):
+            total += b
+            if total > n:
                 break
-            elif num == n:
-                answer+=1
-                break
-    return answer
+            elif total == n:
+                count += 1
+    return count
