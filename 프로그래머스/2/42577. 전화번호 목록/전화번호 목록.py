@@ -1,12 +1,12 @@
+from collections import Counter
+
 def solution(phone_book):
-    hash_map = dict()
-    for num in phone_book:
-        hash_map[num] = 1
-        
-    for number in hash_map:
+    hash_map = Counter(phone_book)
+    
+    for words in phone_book:
         ch = ''
-        for n in number:
-            ch+=n
-            if ch in hash_map and ch!=number:
+        for word in words:
+            ch += word
+            if ch in hash_map and ch != words:
                 return False
     return True
