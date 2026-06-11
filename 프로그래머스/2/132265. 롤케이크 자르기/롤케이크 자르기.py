@@ -1,15 +1,16 @@
 from collections import Counter
 
 def solution(topping):
-    old = Counter(topping)
-    young = set()
-    count = 0
-    
-    for num in topping:
-        old[num] -= 1
-        young.add(num)
-        if old[num]==0:
-            old.pop(num)
-        if len(old) == len(young):
-            count+=1
-    return count
+    left = set()
+    right = Counter(topping)
+    cnt = 0
+    for top in topping:
+        left.add(top)
+        right[top] -= 1
+        
+        if right[top] == 0:
+            del right[top]
+        
+        if len(left) ==len(right):
+            cnt += 1
+    return cnt
